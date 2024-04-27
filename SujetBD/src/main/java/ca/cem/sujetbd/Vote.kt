@@ -1,10 +1,9 @@
-package ca.cem.tp3_bd
+package ca.cem.sujetbd
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import ca.cem.tp3_bd.Sujet
 
 @Entity(foreignKeys = arrayOf(
     ForeignKey(entity = Sujet::class,

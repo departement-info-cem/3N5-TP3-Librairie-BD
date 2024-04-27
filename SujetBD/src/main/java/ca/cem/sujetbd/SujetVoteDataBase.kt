@@ -1,4 +1,4 @@
-package ca.cem.tp3_bd
+package ca.cem.sujetbd
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

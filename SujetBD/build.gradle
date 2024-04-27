@@ -1,12 +1,14 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-//    id 'com.google.devtools.ksp' version '1.6.0-1.0.0'
-    id 'kotlin-kapt'
+//    alias(libs.plugins.org.jetbrains.kotlin.android)
+//    alias(libs.plugins.org.jetbrains.kotlin.kapt)
+    //id 'kotlin-kapt'
+    id  "org.jetbrains.kotlin.kapt"
 }
 
 android {
-    namespace 'ca.cem.tp3_bd'
+    namespace 'ca.cem.sujetbd'
     compileSdk 34
 
     defaultConfig {
@@ -35,28 +37,14 @@ dependencies {
     def room_version = "2.6.1"
     api "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
-
     // To use Kotlin annotation processing tool (kapt)
     kapt "androidx.room:room-compiler:$room_version"
-
     // optional - Kotlin Extensions and Coroutines support for Room
     api "androidx.room:room-ktx:$room_version"
 
-    // optional - RxJava2 support for Room
-    // implementation("androidx.room:room-rxjava2:$room_version")
-    // optional - RxJava3 support for Room
-    // implementation("androidx.room:room-rxjava3:$room_version")
-    // optional - Guava support for Room, including Optional and ListenableFuture
-    // implementation("androidx.room:room-guava:$room_version")
-    // optional - Test helpers
-    // testImplementation("androidx.room:room-testing:$room_version")
-    // optional - Paging 3 Integration
-    // implementation("androidx.room:room-paging:$room_version")
-
-
-    implementation libs.androidx.core.ktx
-    implementation libs.androidx.appcompat
-    implementation libs.material
+    //implementation libs.androidx.core.ktx
+    //implementation libs.androidx.appcompat
+    //implementation libs.material
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core

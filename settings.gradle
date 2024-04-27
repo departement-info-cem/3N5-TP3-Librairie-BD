@@ -20,5 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "TP3-BD"
-include ':app'
-include ':app:tp3-bd'
+include ':SujetBD'

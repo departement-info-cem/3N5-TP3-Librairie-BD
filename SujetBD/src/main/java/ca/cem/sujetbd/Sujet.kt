@@ -1,4 +1,4 @@
-package ca.cem.tp3_bd
+package ca.cem.sujetbd
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

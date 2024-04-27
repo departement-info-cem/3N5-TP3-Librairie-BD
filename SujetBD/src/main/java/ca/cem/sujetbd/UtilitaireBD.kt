@@ -1,4 +1,4 @@
-package ca.cem.tp3_bd
+package ca.cem.sujetbd
 
 import android.content.Context
 import androidx.room.Room

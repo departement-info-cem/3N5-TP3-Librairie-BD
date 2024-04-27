@@ -1,4 +1,4 @@
-package ca.cem.tp3_bd
+package ca.cem.sujetbd
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -8,7 +8,6 @@ import java.util.Optional
 
 @Dao
 interface SujetVoteDAO {
-
 
     @Insert fun ajouterSujet(sujet: Sujet): Long
     @Insert fun ajouterVote(vote: Vote): Long
