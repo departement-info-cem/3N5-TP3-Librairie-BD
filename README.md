@@ -9,4 +9,4 @@ Executer gradle build
 Executer gradle assemble
 
 
-Le fichier Library par va maintenant se trouver dans **app/tp3-bd/build/outputs/aar/tp3-bd-release.aar**
+Le fichier Library par va maintenant se trouver dans **SujetBD/build/outputs/aar/SujetBD-release.aar**

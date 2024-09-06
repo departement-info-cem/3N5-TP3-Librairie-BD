@@ -32,6 +32,14 @@ interface SujetVoteDAO {
     @Delete
     fun supprimer(sujet: Sujet)
 
+    //supprimer tous les sujets
+    @Query("DELETE FROM sujet")
+    fun supprimerTousLesSujets()
+
+    //supprimer tous les votes
+    @Query("DELETE FROM vote")
+    fun supprimerTousLesVotes()
+
     // return all sujets ordered by number of votes
     @Query("SELECT * FROM sujet ORDER BY (SELECT COUNT(*) FROM vote WHERE vote.sujetId = sujet.id) DESC")
     fun sujetsParOrdreDeVotes(): List<Sujet>
