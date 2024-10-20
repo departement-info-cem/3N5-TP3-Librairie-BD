@@ -20,11 +20,11 @@ jobs:
     - name: Générer la documentation d'API
       run: ./gradlew dokkaHtml
     - name: testy
-      run: ls SujetBD
+      run: ls SujetBD/build
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        path: ./SujetBD/documentation/html
+        path: ./SujetBD/build/documentation/html
 
   deploy:
     name: Déployer le site
