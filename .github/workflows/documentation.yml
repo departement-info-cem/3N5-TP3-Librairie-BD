@@ -16,13 +16,14 @@ jobs:
         java-version: 17
 
     - name: Setup Gradle
-      uses: gradle/gradle-build-action@v3
+      uses: gradle/actions/setup-gradle@v4
     - name: Générer la documentation d'API
       run: ./gradlew dokkaHtml
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         path: ./SujetBD/build/dokka/html
+        name: github-pages
 
   deploy:
     name: Déployer le site
@@ -42,5 +43,3 @@ jobs:
       - name: Déploiement
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: artifact
