@@ -28,7 +28,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        path: ./SujetBD/build/dokka/html/index.html
+        path: ./SujetBD/build/dokka/javadoc
         name: github-pages
 
   deploy:
