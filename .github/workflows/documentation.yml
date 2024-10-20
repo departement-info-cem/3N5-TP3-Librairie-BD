@@ -19,6 +19,8 @@ jobs:
       uses: gradle/gradle-build-action@v3
     - name: Générer la documentation d'API
       run: ./gradlew dokkaHtml
+    - name: testy
+      run: ls
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
