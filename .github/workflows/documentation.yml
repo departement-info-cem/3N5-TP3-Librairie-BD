@@ -17,22 +17,12 @@ jobs:
 
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v3
-
-    - name: Build
-      id: build
-      run: |
-        if ! ./gradlew build; then
-          # Address a rare unit test failure very likely to be a test-harness-related
-          # race condition.
-          echo "Build failed, retrying once"
-          if ! ./gradlew build; then
-            exit 1
-          fi
-        fi
     - name: Générer la documentation d'API
       run: ./gradlew dokkaHtml
     - name: Upload artifact
       uses: actions/upload-artifact@v4
+      with:
+        path: ./SujetBD/documentation/html
 
   deploy:
     name: Déployer le site
