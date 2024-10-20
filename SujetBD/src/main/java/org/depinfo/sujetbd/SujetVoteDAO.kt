@@ -1,4 +1,4 @@
-package ca.cem.sujetbd
+package org.depinfo.sujetbd
 
 import androidx.room.Dao
 import androidx.room.Delete

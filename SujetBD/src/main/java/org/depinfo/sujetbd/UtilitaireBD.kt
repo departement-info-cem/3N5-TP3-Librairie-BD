@@ -1,4 +1,4 @@
-package ca.cem.sujetbd
+package org.depinfo.sujetbd
 
 import android.content.Context
 import androidx.room.Room
