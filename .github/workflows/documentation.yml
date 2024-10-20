@@ -26,7 +26,7 @@ jobs:
           echo "::warning title=Invalid file permissions automatically fixed::$line"
         done
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
         path: ./SujetBD/build/dokka/html
         name: github-pages
