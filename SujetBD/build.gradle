@@ -57,5 +57,11 @@ publishing {
         gpr(MavenPublication) {
             from components.findByName('java')
         }
+        bar(MavenPublication) {
+            groupId 'org.depinfo.sujetbd'
+            artifactId "SujetBD"
+            version "1.0.0"
+            artifact("$buildDir/outputs/aar/SujetBD-release.aar")
+        }
     }
 }
