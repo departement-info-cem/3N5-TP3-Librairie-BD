@@ -2,7 +2,7 @@ name: Deployer la documentation d'API
 
 on:
   push:
-    branches: [ main ]
+    branches: main
 
 jobs:
   build:
@@ -14,7 +14,6 @@ jobs:
       with:
         distribution: temurin
         java-version: 17
-
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v4
     - name: Générer la documentation d'API
