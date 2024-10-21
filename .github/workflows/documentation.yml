@@ -1,4 +1,4 @@
-name: Deployer la documentation d'API
+name: Déployer la documentation d'API
 
 on:
   push:

@@ -48,7 +48,7 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/departement-info-cem/3N5-TP3-Librairie-BD")
             credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                username = departement-info-cem
                 password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
             }
         }
