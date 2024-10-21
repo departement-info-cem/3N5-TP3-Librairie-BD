@@ -22,7 +22,7 @@ jobs:
     - name: Générer la javadoc d'API
       run: ./gradlew dokkaJavadoc
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-pages-artifact@v3
       with:
         path: ./SujetBD/build/dokka/javadoc
         name: github-pages
