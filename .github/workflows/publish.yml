@@ -19,6 +19,6 @@ jobs:
       - name: Assembler
         run: ./gradlew assemble
       - name: Publier
-        run: ./gradlew publish
+        run: ./gradlew publish --stacktrace --debug
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
