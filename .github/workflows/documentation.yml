@@ -19,12 +19,10 @@ jobs:
       uses: gradle/actions/setup-gradle@v4
     - name: Générer la documentation d'API
       run: ./gradlew dokkaHtml
-    - name: Générer la javadoc d'API
-      run: ./gradlew dokkaJavadoc
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: ./SujetBD/build/dokka/javadoc
+        path: ./SujetBD/build/dokka/html
         name: github-pages
 
   deploy:
