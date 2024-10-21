@@ -3,13 +3,17 @@ package org.depinfo.sujetbd
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
-@Entity(foreignKeys = arrayOf(
+@Entity(
+    indices = [Index(value = ["sujetId"])],
+    foreignKeys = arrayOf(
     ForeignKey(entity = Sujet::class,
     parentColumns = arrayOf("id"),
     childColumns = arrayOf("sujetId"),
-    onDelete = ForeignKey.CASCADE)
+    onDelete = ForeignKey.CASCADE),
+
 ))
 class Vote {
 
@@ -17,11 +21,11 @@ class Vote {
     var id: Long = 0L
 
     @ColumnInfo()
-    var sujetId: Long? = null            // l'id du sujet sur lequel on vote Foreign Key
+    var sujetId: Long = 0            // l'id du sujet sur lequel on vote Foreign Key
 
     @ColumnInfo()
-    var nomVotant: String? = null       // le nom du votant qui devra être unique pour cette question
+    var nomVotant: String = ""       // le nom du votant qui devra être unique pour cette question
 
     @ColumnInfo()
-    var note: Int? = null               // la note entre 1 et 5
+    var note: Int = 0               // la note entre 1 et 5
 }
