@@ -43,23 +43,16 @@ dependencies {
 }
 
 publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/departement-info-cem/3N5-TP3-Librairie-BD")
-            credentials {
-                username = "departement-info-cem"
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
     publications {
-        gpr(MavenPublication) {
+        maven(MavenPublication) {
             groupId 'org.depinfo.sujetbd'
             artifactId "SujetBD"
             version "1.0.0"
             artifact("$buildDir/outputs/aar/SujetBD-release.aar")
             from components.findByName('java')
         }
+    }
+    repositories {
+        mavenLocal()
     }
 }
