@@ -42,17 +42,30 @@ dependencies {
     dokkaPlugin("org.jetbrains.dokka:android-documentation-plugin:1.9.20")
 }
 
-publishing {
-    publications {
-        release(MavenPublication) {
-            groupId 'org.depinfo.sujetbd'
-            artifactId "SujetBD"
-            version "1.0.0"
-            artifact("$buildDir/outputs/aar/SujetBD-release.aar")
-            from components.findByName('java')
+//publishing {
+//    publications {
+//        release(MavenPublication) {
+//            groupId 'org.depinfo.sujetbd'
+//            artifactId "SujetBD"
+//            version "1.0.0"
+//            artifact("$buildDir/outputs/aar/SujetBD-release.aar")
+//            from components.findByName('java')
+//        }
+//    }
+//    repositories {
+//        mavenLocal()
+//    }
+//}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId 'org.depinfo.sujetbd'
+                artifactId "SujetBD"
+                version "1.0.0"
+            }
         }
-    }
-    repositories {
-        mavenLocal()
     }
 }
