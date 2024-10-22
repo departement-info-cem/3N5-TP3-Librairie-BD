@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Sujet(
-    @PrimaryKey(autoGenerate = true) var id: Long = 0L,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0L,
     @ColumnInfo(name = "contenu_en_bd") var contenu: String = "",
 ) {
     @Suppress("unused")

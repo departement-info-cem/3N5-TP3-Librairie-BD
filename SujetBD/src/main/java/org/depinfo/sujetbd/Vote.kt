@@ -15,7 +15,7 @@ import androidx.room.PrimaryKey
     )]
 )
 data class Vote(
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    @PrimaryKey(autoGenerate = true) private val id: Long = 0,
     @ColumnInfo() var sujetId: Long = 0,            // l'id du sujet sur lequel on vote Foreign Key
     @ColumnInfo() var nomVotant: String = "",       // le nom du votant qui devra être unique pour cette question
     @ColumnInfo() var note: Int = 0,                // la note entre 1 et 5
