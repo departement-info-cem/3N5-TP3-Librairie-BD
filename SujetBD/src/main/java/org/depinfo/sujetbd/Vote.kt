@@ -23,9 +23,9 @@ import androidx.room.PrimaryKey
 )
 data class Vote(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    @ColumnInfo() var sujetId: Long = 0,
-    @ColumnInfo() var nomVotant: String = "",
-    @ColumnInfo() var note: Int = 0,
+    @ColumnInfo var sujetId: Long = 0,
+    @ColumnInfo var nomVotant: String = "",
+    @ColumnInfo var note: Int = 0,
 ) {
 
     /**

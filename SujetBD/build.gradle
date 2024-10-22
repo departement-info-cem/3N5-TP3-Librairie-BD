@@ -1,12 +1,8 @@
-import org.jetbrains.dokka.gradle.DokkaTask
-
-import java.time.LocalDateTime
-
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("org.jetbrains.dokka") version "1.9.20"
-    id 'org.jetbrains.kotlin.kapt'
+    id("com.google.devtools.ksp")
     id 'maven-publish'
 }
 
@@ -38,12 +34,12 @@ android {
 
 dependencies {
     def room_version = "2.6.1"
-    api "androidx.room:room-runtime:$room_version"
+    api libs.androidx.room.runtime
     annotationProcessor "androidx.room:room-compiler:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
+    ksp "androidx.room:room-compiler:$room_version"
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
-    dokkaPlugin("org.jetbrains.dokka:android-documentation-plugin:1.9.20")
+    dokkaPlugin(libs.android.documentation.plugin)
 }
 afterEvaluate {
     publishing {

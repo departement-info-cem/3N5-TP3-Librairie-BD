@@ -1,10 +1,14 @@
 [versions]
 agp = "8.3.2"
+androidDocumentationPlugin = "1.9.20"
 kotlin = "1.9.24"
 junit = "4.13.2"
 junitVersion = "1.2.1"
+roomRuntime = "2.6.1"
 
 [libraries]
+android-documentation-plugin = { module = "org.jetbrains.dokka:android-documentation-plugin", version.ref = "androidDocumentationPlugin" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 
