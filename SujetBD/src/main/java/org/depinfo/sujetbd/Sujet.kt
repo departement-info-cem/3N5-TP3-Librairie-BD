@@ -5,12 +5,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class Sujet {
-
-    @PrimaryKey(autoGenerate = true)
-    var id: Long = 0L // TODO expliquer que 0 est important ici, convention pour "a generer".
-
-    @ColumnInfo(name = "contenu_en_bd")
-    var contenu: String = ""
-
+data class Sujet(
+    @PrimaryKey(autoGenerate = true) var id: Long = 0L,
+    @ColumnInfo(name = "contenu_en_bd") var contenu: String = "",
+) {
+    @Suppress("unused")
+    constructor(contenu: String) : this(0, contenu)
 }
