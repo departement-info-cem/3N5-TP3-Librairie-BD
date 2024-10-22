@@ -7,11 +7,11 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 
 /**
- * Un vote pour un sujet
- * @param id l'id du vote
- * @param sujetId l'id du sujet sur lequel on vote
- * @param nomVotant le nom du votant qui devra être unique pour cette question
- * @param note la note entre 0 et 5
+ * Un vote pour un sujet.
+ * @param id l'id du vote.
+ * @param sujetId l'id du sujet sur lequel on vote.
+ * @param nomVotant le nom du votant qui devra être unique pour cette question.
+ * @param note la note entre 0 et 5.
  */
 @Entity(
     indices = [Index(value = ["sujetId"])], foreignKeys = [ForeignKey(
@@ -27,6 +27,10 @@ data class Vote(
     @ColumnInfo() var nomVotant: String = "",
     @ColumnInfo() var note: Int = 0,
 ) {
+
+    /**
+     * Constructeur d'un Vote à utiliser.
+     */
     @Suppress("unused")
     constructor(sujetId: Long, nomVotant: String, note: Int) : this(0, sujetId, nomVotant, note)
 }

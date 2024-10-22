@@ -1,3 +1,7 @@
+import org.jetbrains.dokka.gradle.DokkaTask
+
+import java.time.LocalDateTime
+
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -41,7 +45,6 @@ dependencies {
     androidTestImplementation libs.androidx.junit
     dokkaPlugin("org.jetbrains.dokka:android-documentation-plugin:1.9.20")
 }
-
 afterEvaluate {
     publishing {
         publications {
@@ -51,6 +54,12 @@ afterEvaluate {
                 artifactId "SujetBD"
                 version "1.0.0"
             }
+        }
+    }
+
+    tasks.withType(DokkaTask::class).configureEach {
+        dokkaSourceSets.configureEach {
+            footerMessage = "Copyright © ${LocalDateTime.now().year}. 3N5 - Programmation 3. CÉGEP Édouard-Montpetit."
         }
     }
 }
