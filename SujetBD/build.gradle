@@ -56,10 +56,4 @@ afterEvaluate {
             }
         }
     }
-
-    tasks.withType(DokkaTask::class).configureEach {
-        dokkaSourceSets.configureEach {
-            footerMessage = "Copyright © ${LocalDateTime.now().year}. 3N5 - Programmation 3. CÉGEP Édouard-Montpetit."
-        }
-    }
 }
