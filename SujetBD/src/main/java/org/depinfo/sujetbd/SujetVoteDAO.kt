@@ -93,7 +93,37 @@ interface SujetVoteDAO {
 
     /**
      * Obtenir tous les votes
+     * @return la liste de tous les votes.
      */
     @Query("SELECT * FROM vote")
     fun tousLesVotes(): List<Vote>
+
+    /**
+     * Obtenir le nombre de votes pour un sujet.
+     * @param sujetID l'id du sujet.
+     * @return le nombre de votes pour ce sujet.
+     */
+    @Query("SELECT COUNT(*) FROM vote WHERE vote.sujetId = :sujetID")
+    fun nombreDeVotesPourCeSujet(sujetID: Long): Int
+
+    /**
+     * Obtenir le nombre total de votes.
+     * @return le nombre total de votes.
+     */
+    @Query("SELECT COUNT(*) FROM vote")
+    fun nombreTotalDeVotes(): Int
+
+    /**
+     * Obtenir le nombre total de sujets.
+     * @return le nombre total de sujets.
+     */
+    @Query("SELECT COUNT(*) FROM sujet")
+    fun nombreTotalDeSujets(): Int
+
+    /**
+     * Obtenir le nombre total de votants.
+     * @return le nombre total de votants.
+     */
+    @Query("SELECT COUNT(DISTINCT nomVotant) FROM vote")
+    fun nombreTotalDeVotants(): Int
 }
