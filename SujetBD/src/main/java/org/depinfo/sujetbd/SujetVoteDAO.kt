@@ -90,4 +90,10 @@ interface SujetVoteDAO {
      */
     @Query("SELECT * FROM sujet ORDER BY (SELECT COUNT(*) FROM vote WHERE vote.sujetId = sujet.id) DESC")
     fun sujetsParOrdreDeVotes(): List<Sujet>
+
+    /**
+     * Obtenir tous les votes
+     */
+    @Query("SELECT * FROM vote")
+    fun tousLesVotes(): List<Vote>
 }
