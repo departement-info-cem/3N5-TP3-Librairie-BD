@@ -1,12 +1,7 @@
 # 3N5-TP3-Librairie-BD
-Librairie d'accès aux données en SQLite / ROOM pour le TP3
 
-# instruction de build
-Ouvrir le projet dans Android Studio
-Ouvrir la vue gradle
-Cliquer sur le petit terminal
-Executer gradle build
-Executer gradle assemble
+Librairie d'accès aux données en SQLite / ROOM pour le TP3 du cousr de programmation 3
 
+## Utiliser la librairie
 
-Le fichier Library par va maintenant se trouver dans **SujetBD/build/outputs/aar/SujetBD-release.aar**
+La librairie est disponible sur Jitpack [ici](https://jitpack.io/#departement-info-cem/3N5-TP3-Librairie-BD).
