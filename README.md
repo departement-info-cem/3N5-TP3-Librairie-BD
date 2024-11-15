@@ -1,6 +1,6 @@
 # 3N5-TP3-Librairie-BD
 
-Librairie d'accès aux données en SQLite / ROOM pour le TP3 du cousr de programmation 3
+Librairie d'accès aux données en SQLite / ROOM pour le TP3 du cours de programmation 3
 
 ## Utiliser la librairie
 
